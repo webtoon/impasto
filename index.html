@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paralinguistics-Aware Speech-Empowered Large Language Models for Natural Conversation">
+    <title>Nearly Zero-Cost Protection Against Mimicry by Personalized Diffusion Models</title>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Nearly Zero-Cost Protection Against Mimicry by Personalized Diffusion Models</h1>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><a href="https://nmhkahn.github.io">Namhyuk Ahn</a><sup>1,2</sup>,</span>
+                        <span class="author-block"><a href="https://scholar.google.com/citations?user=S93OUYQAAAAJ&hl=ko&oi=ao">KiYoon Yoo</a><sup>1,3</sup>,</span>
+                        <span class="author-block"><a href="https://scholar.google.com/citations?user=SvpXOqsAAAAJ&hl=ko&oi=ao">Wonhyuk Ahn</a><sup>1</sup>,</span>
+                        <span class="author-block"><a href="https://kr.linkedin.com/in/daesikkim/en">Daesik Kim</a><sup>1</sup>,</span>
+                        <span class="author-block"><a href="https://sites.google.com/view/shnam/?pli=1">Seung-Hun Nam</a><sup>1,†</sup></span>
+                    </div>                    
+                    <div class="is-size-6 publication-affiliations">
+                        <span><sup>1</sup>NAVER WEBTOON AI,</span>
+                        <span><sup>2</sup>Inha University,</span>
+                        <span><sup>3</sup>KRAFTON AI</span>
+                    </div>
+                    <div class="is-size-6 publication-affiliations">
+                        <span><sup>†</sup>Corresponding Author</span>
+                    </div>
+		    <div style="margin-bottom: 10px;"></div> 
+                    <div class="publication-links">
+                        <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Ahn_Nearly_Zero-Cost_Protection_Against_Mimicry_by_Personalized_Diffusion_Models_CVPR_2025_paper.html" class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                            <span>Paper</span>
+                        </a>
+                        <a href="https://arxiv.org/abs/2412.11423" class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                            <span>arXiv</span>
+                        </a>
+                        <a href="#" class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
+                            <span> Demo & Code (TBA)</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+                <h2 class="title is-3" style="margin-bottom: 15px;">Overview</h2>
+                <img src="images/fig_overview.png" alt="Overview" style="max-width: 100%; height: auto; margin: 10px 0;">
+                <h3 class="content has-text-justified">
+                <p>
+                <b>FastProtect</b> achieves real-time protection against diffusion models, addressing the critical issue of latency in this task for the first time.
+                By integrating perturbation pre-training with adaptive inference schemes, FastProtect meets all requirements for a practical protection solution.
+                As illustrated in the figures above, the strengths of the proposed method are as follows: (a) FastProtect shows unprecedented speed in protection against diffusion models. On an A100 GPU, FastProtect achieves real-time latency even for processing 2048-by-2048-px image, while others require substantially longer time.
+                (b) In terms of the trade-off between protection efficacy (FID, &uarr; is better) and invisibility (DISTS, &darr; is better), FastProtect exhibits improvement over other protection methods.
+                </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+	
+<section class="section" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+                <h2 class="title is-3" style="margin-bottom: 15px;">Abstract</h2>
+                <h3 class="content has-text-justified">
+                <p>
+                Recent advancements in diffusion models revolutionize image generation but pose risks of misuse, such as replicating artworks or generating deepfakes.
+                Existing image protection methods, though effective, struggle to balance protection efficacy, invisibility, and latency, thus limiting practical use.
+                We introduce perturbation pre-training to reduce latency and propose a mixture-of-perturbations approach that dynamically adapts to input images to minimize performance degradation.
+                Our novel training strategy computes protection loss across multiple VAE feature spaces, while adaptive targeted protection at inference enhances robustness and invisibility.
+                Experiments show comparable protection performance with improved invisibility and drastically reduced inference time.
+                </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+                <h2 class="title is-3" style="margin-bottom: 15px;">Method</h2>
+                <img src="images/fig_method.png" alt="Method" style="max-width: 100%; height: auto; margin: 10px 0;">
+                <h3 class="content has-text-justified">
+                <p>
+                Schematic illustration of the proposed FastProtect.
+                (a) Current iterative optimization approaches lack a training phase and perform optimization during inference, resulting in extremely slow protection.
+                (b) Universal adversarial perturbation (UAP) introduces pre-training of perturbations, but their image-agnostic nature leads to degraded protection efficacy.
+                (c) Combining the advantages of both paradigms, FastProtect adopts a pre-training approach similar to UAP but with a novel mixture-of-perturbation scheme and multi-layer protection loss to enhance protection efficacy. At inference, adaptive targeted protection further boosts protection efficacy with minimal additional cost, and adaptive protection strength improves invisibility.
+                </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+                <h2 class="title is-3" style="margin-bottom: 15px;">Quantitative Results</h2>
+                <img src="images/fig_quantitative_result.png" alt="Quantitative Results1" style="max-width: 100%; height: auto; margin: 10px 0;">
+                <h3 class="content has-text-justified">
+                <p>
+                Quantitative comparison results.
+                The left side of the table presents the inference speed of each method, while the right side summarizes the invisibility and protection performance across four distinct domains.
+                These quantitative results demonstrate that FastProtect achieves substantially faster inference, while maintaining comparable invisibility and robust protection effectiveness compared to existing methods.
+                </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+                <h2 class="title is-3" style="margin-bottom: 15px;">Qualitative Results</h2>
+                <img src="images/fig_qualitative_result1.png" alt="Qualitative Results1" style="max-width: 100%; height: auto; margin: 10px 0 20px 0;">
+                <img src="images/fig_qualitative_result2.png" alt="Qualitative Results2" style="max-width: 100%; height: auto; margin: 10px 0;">
+                <h3 class="content has-text-justified">
+                <p>
+                Qualitative comparison results.
+                The results indicate that FastProtect induces relatively less image quality degradation than the baselines.
+                Furthermore, through the results generated by personalized LoRA, we confirmed that the protected images effectively retained the intended target characteristics, demonstrating the qualitative effectiveness of FastProtect.                </p>
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@InProceedings{Ahn_2025_CVPR,
+    author    = {Ahn, Namhyuk and Yoo, KiYoon and Ahn, Wonhyuk and Kim, Daesik and Nam, Seung-Hun},
+    title     = {Nearly Zero-Cost Protection Against Mimicry by Personalized Diffusion Models},
+    booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {28801-28810}
+}
+        </code></pre>
+    </div>
+</section>
+    
+<footer class="footer">
+    <div class="container" style="max-width:1000px; margin:0 auto; padding:10px;">
+        <p class="has-text-centered">            
+            This website is licensed under a 
+            <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            This means you are free to borrow the 
+            <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">source code</a> of this website, 
+            we just ask that you link back to this page in the footer. Please remember to remove the analytics code included in the header of the website which you do not want on your website.
+        </p>
+    </div>
+</footer>
+</body>
+</html>
